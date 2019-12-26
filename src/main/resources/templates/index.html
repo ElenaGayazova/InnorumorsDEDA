@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Innorumors | Главная</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- ==========header mega navbar=======-->
+<div class="top-menu-bottom932">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Переключить навигацию</span>
+                </button>
+                <a class="navbar-brand" th:href="@{/home}">
+                    <img th:src="@{/image/download.gif}" alt="Logo">
+                </a>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav"></ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <div class="row">
+
+                        <!--                        regButton-->
+                        <div class="col-md-6">
+                            <div class="navbar-menu-left-side239">
+                                <ul>
+                                    <li>
+                                        <a th:href="@{/login}">
+                                            <i class="fa fa-user" aria-hidden="true"></i>Вход/регистрация</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</div>
+
+<!-- ======content section/body=====-->
+<section class="main-content920">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 blog--top-part2892">
+
+                            <!--posts-->
+                            <th:block th:include="parts/posts"/>
+                            <!--место для циферок навигации-->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- печенька -->
+                <div class="container">
+                    <div class="welcome-demop102 text-center">
+                        <p><a th:href="@{/post/create}">
+                            <img th:src="@{/image/pro1.jpg}" width="800" height="267"
+                                 alt="Image" class="img-responsive"></a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--menu-->
+            <th:block th:include="parts/menu"/>
+
+        </div>
+    </div>
+</section>
+
+<!--footter-->
+<th:block th:include="parts/fotter"/>
+
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js}"></script>
+<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{js/npm.js}"></script>
+
+</body>
+</html>

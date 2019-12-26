@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Innorumors | Пользователи</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/editor.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- ==========header mega navbar=======-->
+<th:block th:include="parts/header"/>
+
+<section class="main-content920">
+    <div class="container">
+        <div class="row">
+
+            <!--            list users-->
+            <div class="col-md-9 user-profile328903">
+
+                <!--                user_info-->
+                <div class="about-user2039" th:each="user : ${users}">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="user-image2939303"><img th:src="@{/image/images.png}" alt="Image"></div>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="user-description3903">
+                                <a th:href="@{/user/{id}(id=${user.getId()})}"
+                                   th:text="${user.getUsername()}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--            end list users-->
+
+            <!--menu-->
+            <th:block th:include="parts/menu"/>
+
+        </div>
+    </div>
+</section>
+
+<!--footter-->
+<th:block th:include="parts/fotter"/>
+
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js}"></script>
+<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script>
+    $(document).ready(function () {
+        $("#txtEditor").Editor();
+    });
+</script>
+</body>
+
+</html>

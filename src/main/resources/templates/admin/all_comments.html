@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a th:href="@{/admin}">Admin Menu</a></h2>
+<h2>All Comments</h2>
+<div th:each="comment : ${comments}">
+    <form method="post" action="/admin/delete/comment">
+        <input type="hidden" name="id" th:value="${comment.getId()}">
+        <h3>
+            <div th:text="'isDelete: ' + ${comment.getIsDeleted()}
+            + ' | author: ' + ${comment.getAuthor().getId()} + ' ' + ${comment.getAuthor().getUsername()}
+            + ' | id: ' + ${comment.getId()}  + ' | title: ' + ${comment.getBody()}"></div>
+            <button type="submit">delete/restore</button>
+            <a th:href="@{/post/{id}(id=${comment.getPost().getId()})}">InSite</a>
+        </h3>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Innorumors | Инфо пользователя</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/editor.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- ==========header mega navbar=======-->
+<th:block th:include="parts/header"/>
+
+<section class="main-content920">
+    <div class="container">
+        <div class="row">
+            <!--    body content-->
+            <div class="col-md-9">
+                <div class="about-user2039">
+                    <div class="user-title3930">
+                        <h3 th:text="${user.getUsername()}"></h3>
+                        <hr>
+                    </div>
+                    <div class="user-image293">
+                        <img th:src="@{/image/images.png}" alt="Image">
+                    </div>
+
+                    <!--                    profile-->
+                    <div class="user-list10039">
+                        <div class="ul-list-user-left29">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-plus" aria-hidden="true"
+                                       th:text="'Дата Регистрации: ' + ${user.getFormatRegistrationTime()}"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-plus" aria-hidden="true"
+                                       th:text="'Вход в онлайн: ' + ${user.getFormatLastLogIn()}"></i>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="ul-list-user-right29">
+                            <ul>
+
+                                <li>
+                                    <i class="fa fa-heart" aria-hidden="true"
+                                       th:text="'Рейтинг: ' + ${user.getRating()}"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-history" aria-hidden="true"
+                                       th:text="'Кол-во постов: ' + ${countPosts}"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-comment" aria-hidden="true"
+                                       th:text="'Кол-во комментариев: ' + ${countComments}"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!--                end of col-md-9 -->
+
+            <!--menu-->
+            <th:block th:include="parts/menu"/>
+        </div>
+    </div>
+</section>            <!--    footer -->
+
+<!--footter-->
+<th:block th:include="parts/fotter"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/editor.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#txtEditor").Editor();
+    });
+</script>
+
+</body>
+
+</html>

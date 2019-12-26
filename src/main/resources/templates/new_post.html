@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Innorumors | Создать пост</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/editor.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/responsive.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- ==========header mega navbar=======-->
+<th:block th:include="parts/header"/>
+
+<!-- new Post -->
+<section class="main-content920">
+    <div class="container">
+        <div class="row">
+
+            <form method="post" th:action="@{/post/create}" >
+                <div class="col-md-9">
+                    <div class="ask-question-input-part032">
+                        <h4>Создать пост</h4>
+                        <hr>
+                        <div class="question-title39">
+                            <span class="form-description433">Title*</span>
+                            <input type="text" name="title" class="question-ttile32" placeholder="Тема Вашего поста">
+                        </div>
+                        <div class="question-title39">
+                            <span class="form-description433">Story*</span>
+                            <input type="text" name="body" class="question-ttile32" placeholder="Подробности">
+                        </div>
+                        <div class="publish-button2389">
+                            <button type="submit" class="publis1291">Опубликовать пост</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!--menu-->
+            <th:block th:include="parts/menu"/>
+
+        </div>
+    </div>
+</section>
+
+<!--footter-->
+<th:block th:include="parts/fotter"/>
+
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js}"></script>
+<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/editor.js}"></script>
+<script>
+    $(document).ready(function () {
+        $("#txtEditor").Editor();
+    });
+</script>
+
+</body>
+
+</html>

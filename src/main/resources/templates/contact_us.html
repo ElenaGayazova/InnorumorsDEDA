@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Innorumors | Контакты</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/animate.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- ==========header mega navbar=======-->
+<th:block th:include="parts/header"/>
+
+
+
+
+<section class="main-content920">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="ask-question-input-part032">
+                    <h4>Свяжитесь с нами</h4>
+                    <hr>
+                    <form method="post" action="/review">
+                        <div class="email-part320">
+                            <span class="form-description442">E-Mail* </span>
+                            <input type="text" name="email" class="email30" placeholder="Ваш почтовый адрес">
+                        </div>
+                        <div class="question-title39">
+                            <span class="form-description433">Question-Title* </span>
+                            <input type="text" name="title" class="question-ttile32" placeholder="Тема Вашего вопроса">
+                        </div>
+                        <div class="question-title39">
+                            <span class="form-description43313">Details* </span>
+                            <input type="text" name="body" class="question-ttile32" placeholder="подробное описание">
+                        </div>
+                        <div class="publish-button2389">
+                            <button type="submit" class="publis1291">Отправить письмо</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--                end of col-md-9 -->
+
+            <!--menu-->
+            <th:block th:include="parts/menu"/>
+
+        </div>
+    </div>
+</section>
+
+<!--map-->
+<section class="google-map390">
+    <div class="container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1414.4575661223114!2d48.7405381385224!3d55.753092341493314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415bfe6819651bdb%3A0x682fd54dd3f63773!2z0KPQvdC40LLQtdGA0YHQuNGC0LXRgtGB0LrQsNGPINGD0LsuLCAxLCDQmNC90L3QvtC_0L7Qu9C40YEsINCg0LXRgdC_LiDQotCw0YLQsNGA0YHRgtCw0L0sIDQyMjU5NA!5e0!3m2!1sru!2sru!4v1575482729090!5m2!1sru!2sru"
+                width="100%" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+</section>
+
+<!--footter-->
+<th:block th:include="parts/fotter"/>
+
+<script th:src="@{/https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js}"></script>
+<script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/npm.js}"></script>
+</body>
+
+</html>
